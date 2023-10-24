@@ -1,16 +1,20 @@
-package com.example.flatandflatmates.view
-
+package com.example.flatandflatmates.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.compose.ui.res.painterResource
 import androidx.fragment.app.Fragment
+import com.example.flatandflatmates.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,10 +23,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FlatsFragment.newInstance] factory method to
+ * Use the [NoFlatSelectedFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FlatsFragment : Fragment() {
+class NoFlatSelectedFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,20 +39,20 @@ class FlatsFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
         return ComposeView(requireContext()).apply {
-            //destroy compose view after the onDestoryView() of fragment is called
-            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-            setContent {
-                MaterialTheme {
-                    Text("Hello Compose")
-                }
-            }
+         setContent {
+             MaterialTheme {
+                 showImage(modifier = Modifier
+                     .fillMaxSize()
+                     .wrapContentSize())
+             }
+         }
         }
     }
 
@@ -59,12 +63,12 @@ class FlatsFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FlatsFragment.
+         * @return A new instance of fragment NoFlatAvailableFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FlatsFragment().apply {
+            NoFlatSelectedFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -73,7 +77,13 @@ class FlatsFragment : Fragment() {
     }
 
     @Composable
-    fun horizontalPager(){
-
+    fun showImage(modifier: Modifier) {
+        Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = "")
     }
+
+    @Composable
+    fun showMessage(){
+        Text(text = "hello String")
+    }
+
 }

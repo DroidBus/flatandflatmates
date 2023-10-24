@@ -13,21 +13,25 @@
         android:theme="@style/Theme.Flatandflatmates"
         tools:targetApi="31">
         <activity
-            android:name=".view.FlatsActivity"
+            android:name=".view.activity.ProfileActivity"
             android:exported="false"
-            android:label="@string/title_activity_flats"
-            android:theme="@style/Theme.Flatandflatmates" />
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+             />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.ExampleActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Flatandflatmates">
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"></activity>
     </application>
 
 </manifest>

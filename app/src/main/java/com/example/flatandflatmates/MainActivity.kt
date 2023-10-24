@@ -1,8 +1,10 @@
 package com.example.flatandflatmates
 
 import android.os.Bundle
+import android.text.TextUtils.replace
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,15 +19,21 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.fragment.app.FragmentActivity
 import com.example.flatandflatmates.ui.theme.FlatandflatmatesTheme
 import com.example.flatandflatmates.view.FlatmatesFragment
-import com.example.flatandflatmates.view.FlatsFragment
+import com.example.flatandflatmates.view.fragment.NoFlatSelectedFragment
+import androidx.fragment.app.FragmentManager
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContent {
+
             FlatandflatmatesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -36,8 +44,22 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+
     }
+
+    fun showNoFlatSelectedFragment(){
+        // Display the Fragment
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragment = NoFlatSelectedFragment()
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.commit()
+    }
+
+
 }
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -56,9 +78,11 @@ fun GreetingPreview() {
 }
 
 @Composable
-fun TabScreen(){
-    var tabIndex by remember { mutableStateOf(0)}
-    val tabs = listOf("Flats","Flatmates")
+fun TabScreen() {
+    var tabIndex by remember { mutableStateOf(0) }
+
+    val tabs = listOf("Flats", "Flatmates")
+
     Column(modifier = Modifier.fillMaxWidth()) {
         TabRow(selectedTabIndex = tabIndex) {
             tabs.forEachIndexed { index, title ->
@@ -69,9 +93,20 @@ fun TabScreen(){
             }
         }
         when (tabIndex) {
-            0 -> FlatsFragment()
+            0 -> if (tabIndex == 0) {
+                val activity = (LocalContext.current as? MainActivity)
+                activity?.showNoFlatSelectedFragment()
+            }
             1 -> FlatmatesFragment()
         }
     }
 
 }
+
+
+
+
+
+
+
+

@@ -42,7 +42,7 @@ class FlatmatesFragment : Fragment() {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 MaterialTheme {
-                    Text(text = "Flatmates Fragment")
+                    Text(text = "Flatmates Fragment!!!")
                 }
             }
         }
