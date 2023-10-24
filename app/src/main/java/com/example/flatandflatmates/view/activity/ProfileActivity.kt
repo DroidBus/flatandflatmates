@@ -41,10 +41,10 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            Column() {
+            Column {
                 showProfileImage()
                 showPreference()
-
+                showOptions()
             }
         }
     }
@@ -59,8 +59,8 @@ class ProfileActivity : AppCompatActivity() {
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(250.dp)
-                    .padding(30.dp, 50.dp, 20.dp, 20.dp)
+                    .size(230.dp)
+                    .padding(30.dp, 70.dp, 20.dp, 20.dp)
                     .clip(shape = RoundedCornerShape(8.dp))
 
             )
@@ -68,7 +68,7 @@ class ProfileActivity : AppCompatActivity() {
                 Text(
                     text = stringResource(id = R.string.name),
                     color = colorResource(id = androidx.appcompat.R.color.material_blue_grey_800),
-                    modifier = Modifier.padding(0.dp, 50.dp, 0.dp, 0.dp)
+                    modifier = Modifier.padding(0.dp, 70.dp, 0.dp, 0.dp)
                 )
                 Text(
                     text = stringResource(id = R.string.shweta_sharma),
@@ -117,7 +117,7 @@ class ProfileActivity : AppCompatActivity() {
     @Preview
     @Composable
     fun showOptions() {
-        Column() {
+        Column(modifier = Modifier.padding(30.dp, 20.dp, 20.dp, 20.dp)) {
             Row() {
                 val imageResource = painterResource(id = R.drawable.baseline_person_outline_24)
                 Image(
@@ -128,11 +128,13 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.bio),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.bio), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
             Row() {
-                val imageResource=painterResource(id = R.drawable.baseline_event_note_24)
+                val imageResource = painterResource(id = R.drawable.baseline_event_note_24)
                 Image(
                     painter = imageResource,
                     contentDescription = null,
@@ -141,11 +143,13 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.my_preferences),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.my_preferences), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
             Row() {
-                val imageResource=painterResource(id = R.drawable.baseline_settings_24)
+                val imageResource = painterResource(id = R.drawable.baseline_settings_24)
                 Image(
                     painter = imageResource,
                     contentDescription = null,
@@ -154,11 +158,13 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.setting),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.setting), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
             Row() {
-                val imageResource=painterResource(id = R.drawable.baseline_help_outline_24)
+                val imageResource = painterResource(id = R.drawable.baseline_help_outline_24)
                 Image(
                     painter = imageResource,
                     contentDescription = null,
@@ -167,11 +173,13 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.help),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.help), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
             Row() {
-                val imageResource =painterResource(id = R.drawable.baseline_edit_note_24)
+                val imageResource = painterResource(id = R.drawable.baseline_edit_note_24)
                 Image(
                     painter = imageResource,
                     contentDescription = null,
@@ -180,8 +188,10 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.terms_and_condition),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.terms_and_condition), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
             Row() {
                 val imageResource = painterResource(id = R.drawable.baseline_logout_24)
@@ -193,8 +203,10 @@ class ProfileActivity : AppCompatActivity() {
                         .padding(10.dp, 10.dp, 10.dp, 10.dp)
 
                 )
-                Text(text = stringResource(id = R.string.logout),  modifier = Modifier
-                    .padding(10.dp, 15.dp, 10.dp, 0.dp))
+                Text(
+                    text = stringResource(id = R.string.logout), modifier = Modifier
+                        .padding(10.dp, 15.dp, 10.dp, 0.dp)
+                )
             }
         }
     }
