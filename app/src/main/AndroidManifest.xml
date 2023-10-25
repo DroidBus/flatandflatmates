@@ -13,13 +13,15 @@
         android:theme="@style/Theme.Flatandflatmates"
         tools:targetApi="31">
         <activity
+            android:name=".view.activity.ExampleActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.ProfileActivity"
             android:exported="false"
             android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-             />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".view.activity.ExampleActivity"
+            android:name=".view.activity.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
@@ -31,7 +33,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

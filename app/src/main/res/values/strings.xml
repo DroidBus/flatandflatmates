@@ -56,5 +56,13 @@
     <string name="help">Help</string>
     <string name="logout">Log out</string>
     <string name="terms_and_condition"><![CDATA[Terms & Conditions]]></string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="continue_with_linkedIn">Continue with LinkedIn</string>
+    <string name="or">or</string>
+    <string name="email_or_phone">Email or mobile</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="terms_and_conditions"><![CDATA[By using this website you are agreeing to our\n Personal Information Collection Statements, Term\n & Conditions and Privacy Policy.]]></string>
 
 </resources>

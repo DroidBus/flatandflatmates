@@ -1,6 +1,7 @@
 package com.example.flatandflatmates.view.activity
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
@@ -34,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import com.example.flatandflatmates.R
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
