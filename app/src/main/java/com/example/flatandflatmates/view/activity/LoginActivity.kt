@@ -205,7 +205,7 @@ class LoginActivity : ComponentActivity() {
             fontSize = 14.sp,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(0.dp, 10.dp, 0.dp, 10.dp),
+                .padding(0.dp, 10.dp, 0.dp, 0.dp),
             color = colorResource(id = R.color.black),
         )
     }
