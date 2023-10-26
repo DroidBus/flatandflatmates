@@ -209,6 +209,4 @@ class LoginActivity : ComponentActivity() {
             color = colorResource(id = R.color.black),
         )
     }
-
-
 }
