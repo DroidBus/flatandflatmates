@@ -1,3 +1,3 @@
 # flatandflatmates
-# added login module
+# added login screen
 # added splash module
